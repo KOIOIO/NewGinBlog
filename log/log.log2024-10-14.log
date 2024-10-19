@@ -1,0 +1,7 @@
+time="2024-10-14 19:32:35" level=info HostName=LAPTOP-BJJ1PKI9 clientIP="::1" dataSize=192 method=POST path=/api/v1/user/add spendTime="1 ms" statusCode=200 userAgent="Apifox/1.0.0 (https://apifox.com)"
+time="2024-10-14 19:32:53" level=info HostName=LAPTOP-BJJ1PKI9 clientIP="::1" dataSize=1757 method=GET path=/api/v1/users spendTime="6 ms" statusCode=200 userAgent="Apifox/1.0.0 (https://apifox.com)"
+time="2024-10-14 19:36:37" level=info HostName=LAPTOP-BJJ1PKI9 clientIP="::1" dataSize=1757 method=GET path=/api/v1/users spendTime="1 ms" statusCode=200 userAgent="Apifox/1.0.0 (https://apifox.com)"
+time="2024-10-14 19:58:28" level=info HostName=LAPTOP-BJJ1PKI9 clientIP="::1" dataSize=60 method=POST path=/api/v1/user/add spendTime="1 ms" statusCode=200 userAgent="Apifox/1.0.0 (https://apifox.com)"
+time="2024-10-14 19:58:35" level=info HostName=LAPTOP-BJJ1PKI9 clientIP="::1" dataSize=47 method=POST path=/api/v1/user/add spendTime="2 ms" statusCode=200 userAgent="Apifox/1.0.0 (https://apifox.com)"
+time="2024-10-14 19:58:43" level=info HostName=LAPTOP-BJJ1PKI9 clientIP="::1" dataSize=47 method=POST path=/api/v1/user/add spendTime="1 ms" statusCode=200 userAgent="Apifox/1.0.0 (https://apifox.com)"
+time="2024-10-14 19:58:48" level=info HostName=LAPTOP-BJJ1PKI9 clientIP="::1" dataSize=207 method=POST path=/api/v1/user/add spendTime="48 ms" statusCode=200 userAgent="Apifox/1.0.0 (https://apifox.com)"
