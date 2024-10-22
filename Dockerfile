@@ -1,29 +1,33 @@
-FROM golang:alpine
+# 使用官方的 Golang 运行时作为基础镜像
+FROM golang:1.22-alpine AS builder
 
-# 为我们的镜像设置必要的环境变量
-ENV GO111MODULE=on \
-    GOPROXY=https://goproxy.cn,direct \
-    CGO_ENABLED=0 \
-    GOOS=linux \
-    GOARCH=amd64
+# 设置工作目录
+WORKDIR /app
 
-# 移动到工作目录：/build
-WORKDIR /build
-
-# 将代码复制到容器中
+# 复制项目的 Go 源码到工作目录
 COPY . .
 
-# 将我们的代码编译成二进制可执行文件app
-RUN go build -o app .
+# 构建项目
+RUN go build -o ginblog .
 
-# 移动到用于存放生成的二进制文件的 /dist 目录
-WORKDIR /dist
+# 使用一个轻量级的 Alpine Linux 镜像作为运行时镜像
+FROM alpine:latest
 
-# 将二进制文件从 /build 目录复制到这里
-RUN cp /build/app .
+# 将构建好的二进制文件从构建阶段复制到运行时阶段
+COPY --from=builder /app/ginblog /usr/local/bin/ginblog
 
-# 声明服务端口
+# 设置环境变量
+ENV APP_MODE=debug \
+    HTTP_PORT=8080 \
+    JWT_KEY=eqwr3425 \
+    DB_HOST=mysql \
+    DB_PORT=3306 \
+    DB_USER=root \
+    DB_PASSWORD=wwy040609 \
+    DB_NAME=NewGinBlog
+
+# 暴露 HTTP 端口
 EXPOSE 8080
 
-# 启动容器时运行的命令
-CMD ["/dist/app"]
+# 运行 GinBlog 应用
+ENTRYPOINT ["/usr/local/bin/ginblog"]
